@@ -15,7 +15,7 @@ pipeline {
                  script{
                         dir("terraform")
                         {
-                            git "https://github.com/yeshwanthlm/Terraform-Jenkins.git"
+                            git "https://github.com/naveen2314/Terraform-Jenkins.git"
                         }
                     }
                 }
@@ -38,7 +38,7 @@ pipeline {
            steps {
                script {
                     def plan = readFile 'terraform/tfplan.txt'
-                    input message: "Do you want to apply the plan?",
+                    input message: "Do you want to apply the plan? Please read it.",
                     parameters: [text(name: 'Plan', description: 'Please review the plan', defaultValue: plan)]
                }
            }
